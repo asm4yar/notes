@@ -12,7 +12,7 @@ async def task_one():
 # Асинхронная функция task_two
 async def task_two():
     print("Task 2 started")
-    await asyncio.sleep(3)
+    await asyncio.sleep(2)
     print("Task 2 finished")
 
 
