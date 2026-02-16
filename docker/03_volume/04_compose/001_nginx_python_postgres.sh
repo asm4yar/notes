@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  web:
+    image: nginx:latest
+    networks:
+      - my_network
+
+  app:
+    image: python:3.8-slim
+    networks:
+      - my_network
+
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: mydatabase
+    networks:
+      - my_network
+
+networks:
+  my_network:
+    driver: bridge
+    
